@@ -1171,47 +1171,63 @@
         const FAMOUS_LEGENDS = [
             {
                 name: 'Judit Polgár',
+                wikiTitle: 'Judit_Polgár',
                 years: 'Hungría (1976) • La Reina del Ajedrez',
                 emoji: '👸',
-                photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Judit_Polgar_%282008%29.jpg/440px-Judit_Polgar_%282008%29.jpg',
                 story: 'Considerada la mejor ajedrecista de todos los tiempos. Aprendió a jugar desde muy pequeña junto a sus hermanas y con solo 15 años batió el récord mundial de Gran Maestro más joven de la historia, derrotando a campeones mundiales con un juego valiente y muy creativo.'
             },
             {
                 name: 'Magnus Carlsen',
+                wikiTitle: 'Magnus_Carlsen',
                 years: 'Noruega (1990) • El Mozart del Ajedrez',
                 emoji: '🧠',
-                photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Magnus_Carlsen_2019.jpg/440px-Magnus_Carlsen_2019.jpg',
                 story: 'De niño memorizaba banderas y capitales de todos los países con 5 años. Se convirtió en Gran Maestro con solo 13 años y fue Campeón del Mundo durante toda una década gracias a su increíble intuición y su capacidad para encontrar jugadas ganadoras en posiciones difíciles.'
             },
             {
                 name: 'Garry Kasparov',
+                wikiTitle: 'Garry_Kasparov',
                 years: 'Bakú (1963) • Hombre vs Máquina',
                 emoji: '🤖',
-                photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Garry_Kasparov_2007.jpg/440px-Garry_Kasparov_2007.jpg',
                 story: 'Fue el número 1 del mundo durante 20 años seguidos. Pasó a la historia en 1997 al disputar el duelo más famoso del siglo contra "Deep Blue", la supercomputadora de IBM, inaugurando la era moderna de la Inteligencia Artificial aplicada al ajedrez.'
             },
             {
                 name: 'José Raúl Capablanca',
+                wikiTitle: 'José_Raúl_Capablanca',
                 years: 'Cuba (1888–1942) • La Máquina Humana',
                 emoji: '🎩',
-                photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Jos%C3%A9_Ra%C3%BAl_Capablanca_1931.jpg/440px-Jos%C3%A9_Ra%C3%BAl_Capablanca_1931.jpg',
                 story: 'Aprendió a mover las piezas con solo 4 años observando jugar a su padre y corrigiéndole una jugada ilegal. Jugaba con una naturalidad y rapidez asombrosas: estuvo 8 años seguidos sin perder ni una sola partida oficial.'
             },
             {
                 name: 'Vera Menchik',
+                wikiTitle: 'Vera_Menchik',
                 years: 'Moscú / Londres (1906–1944) • Primera Campeona',
                 emoji: '🏆',
-                photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Vera_Menchik_1933.jpg/440px-Vera_Menchik_1933.jpg',
                 story: 'Fue la primera mujer en conquistar el Campeonato Mundial de Ajedrez en 1927 y defendió su título invicta durante 17 años seguidos, abriendo camino para millones de niñas y jóvenes en los torneos internacionales.'
             },
             {
+                name: 'Bobby Fischer',
+                wikiTitle: 'Bobby_Fischer',
+                years: 'EE. UU. (1943–2008) • Genio del Siglo XX',
+                emoji: '⚡',
+                story: 'Aprendió las reglas a los 6 años leyendo las instrucciones de una caja de ajedrez que le compró su hermana. Con 14 años fue campeón de Estados Unidos y en 1972 ganó el llamado "Match del Siglo", asombrando al mundo con su precisión matemática.'
+            },
+            {
+                name: 'Anatoly Karpov',
+                wikiTitle: 'Anatoly_Karpov',
+                years: 'Rusia (1951) • La Boa Constrictora',
+                emoji: '🐍',
+                story: 'Campeón del Mundo durante diez años y protagonista de los duelos más épicos de la historia frente a Kasparov. Su estilo se basaba en encerrar poco a poco las piezas del rival sin dejarle espacio hasta ganar con elegante paciencia.'
+            },
+            {
                 name: 'Ruy López de Segura',
+                wikiTitle: 'Ruy_López_de_Segura',
                 years: 'Zafra, España (1530–1580) • Pionero Español',
                 emoji: '🇪🇸',
-                photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Ruy_Lopez_de_Segura.jpg/440px-Ruy_Lopez_de_Segura.jpg',
                 story: 'Sacerdote y ajedrecista extremeño del siglo XVI, considerado uno de los primeros campeones del mundo oficiosos. Escribió uno de los primeros libros modernos de ajedrez en 1561 y dio nombre a la famosa "Apertura Española", que hoy siguen jugando todos los grandes maestros.'
             }
         ];
+
+        const legendPhotoCache = {};
 
         let userStats = JSON.parse(localStorage.getItem('muelle_tinto_user_stats')) || {
             gamesPlayed: 0,
@@ -1298,27 +1314,58 @@
 
         let selectedLegendIdx = 0;
 
-        function renderLegendsGrid() {
+        async function fetchRealLegendPhoto(wikiTitle) {
+            if (legendPhotoCache[wikiTitle]) return legendPhotoCache[wikiTitle];
+            try {
+                const res = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(wikiTitle)}`);
+                if (res.ok) {
+                    const data = await res.json();
+                    const url = (data.originalimage && data.originalimage.source) || (data.thumbnail && data.thumbnail.source);
+                    if (url) {
+                        legendPhotoCache[wikiTitle] = url;
+                        return url;
+                    }
+                }
+            } catch (e) {}
+            try {
+                const resEs = await fetch(`https://es.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(wikiTitle)}`);
+                if (resEs.ok) {
+                    const dataEs = await resEs.json();
+                    const urlEs = (dataEs.originalimage && dataEs.originalimage.source) || (dataEs.thumbnail && dataEs.thumbnail.source);
+                    if (urlEs) {
+                        legendPhotoCache[wikiTitle] = urlEs;
+                        return urlEs;
+                    }
+                }
+            } catch (e) {}
+            return null;
+        }
+
+        async function renderLegendsGrid() {
             const btns = document.getElementById('legends-buttons');
             if (!btns) return;
+            btns.className = 'grid grid-cols-2 sm:grid-cols-4 gap-2.5';
             btns.innerHTML = FAMOUS_LEGENDS.map((l, idx) => {
                 const active = idx === selectedLegendIdx;
                 return `
-                    <button onclick="selectLegend(${idx})" class="p-3 rounded-2xl text-left transition border-2 flex items-center gap-2.5 cursor-pointer ${active ? 'bg-cyan-500/25 border-cyan-400 shadow-[0_0_15px_rgba(0,240,255,0.3)]' : 'bg-slate-900/80 border-slate-700 hover:border-cyan-400/60'}">
-                        <span class="text-2xl shrink-0">${l.emoji}</span>
+                    <button onclick="selectLegend(${idx})" class="p-3 rounded-2xl text-left transition border-2 flex items-center gap-2 cursor-pointer ${active ? 'bg-cyan-500/25 border-cyan-400 shadow-[0_0_15px_rgba(0,240,255,0.3)]' : 'bg-slate-900/80 border-slate-700 hover:border-cyan-400/60'}">
+                        <span class="text-xl shrink-0">${l.emoji}</span>
                         <span class="font-bold text-xs sm:text-sm text-white leading-tight">${l.name}</span>
                     </button>
                 `;
             }).join('');
 
-            const legend = FAMOUS_LEGENDS[selectedLegendIdx];
+            const currentIdx = selectedLegendIdx;
+            const legend = FAMOUS_LEGENDS[currentIdx];
             const card = document.getElementById('legend-detail-card');
             if (card && legend) {
+                const cachedUrl = legendPhotoCache[legend.wikiTitle];
                 card.innerHTML = `
-                    <div class="w-32 h-36 sm:w-36 sm:h-44 rounded-2xl overflow-hidden border-2 border-cyan-400/70 bg-slate-800 shrink-0 shadow-lg flex items-center justify-center relative">
-                        <img src="${legend.photoUrl}" alt="${legend.name}" class="w-full h-full object-cover"
-                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="hidden w-full h-full items-center justify-center text-6xl bg-gradient-to-br from-cyan-900 to-slate-900">${legend.emoji}</div>
+                    <div id="legend-photo-box" class="w-36 h-44 sm:w-40 sm:h-48 rounded-2xl overflow-hidden border-2 border-cyan-400/70 bg-slate-800 shrink-0 shadow-lg flex items-center justify-center relative">
+                        ${cachedUrl
+                            ? `<img src="${cachedUrl}" alt="${legend.name}" class="w-full h-full object-cover object-top">`
+                            : `<div class="w-full h-full flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-cyan-950 to-slate-900 text-cyan-300 text-xs font-bold"><span class="text-4xl animate-pulse">${legend.emoji}</span><span>Cargando foto...</span></div>`
+                        }
                     </div>
                     <div class="space-y-2 text-center sm:text-left">
                         <span class="inline-block bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-bold px-3 py-0.5 rounded-full">${legend.years}</span>
@@ -1326,6 +1373,20 @@
                         <p class="text-sm sm:text-base text-slate-200 leading-relaxed">${legend.story}</p>
                     </div>
                 `;
+
+                if (!cachedUrl) {
+                    const realUrl = await fetchRealLegendPhoto(legend.wikiTitle);
+                    if (selectedLegendIdx === currentIdx) {
+                        const photoBox = document.getElementById('legend-photo-box');
+                        if (photoBox) {
+                            if (realUrl) {
+                                photoBox.innerHTML = `<img src="${realUrl}" alt="${legend.name}" class="w-full h-full object-cover object-top">`;
+                            } else {
+                                photoBox.innerHTML = `<div class="w-full h-full flex items-center justify-center text-6xl bg-gradient-to-br from-cyan-900 to-slate-900">${legend.emoji}</div>`;
+                            }
+                        }
+                    }
+                }
             }
         }
 

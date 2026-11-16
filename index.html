@@ -267,98 +267,102 @@
 
     <!-- HEADER FUTURISTA -->
     <header class="glass-panel border-b border-cyan-500/30 sticky top-0 z-30">
-        <div class="max-w-7xl mx-auto px-3 py-2.5 flex items-center justify-between gap-2 flex-wrap">
-            <div class="flex items-center gap-3 cursor-pointer" onclick="goHome()">
-                <div class="w-11 h-11 rounded-2xl bg-slate-900/90 border border-cyan-400/50 flex items-center justify-center shadow-[0_0_15px_rgba(0,240,255,0.3)] shrink-0 overflow-hidden p-0.5">
-                    <svg viewBox="0 0 120 120" class="w-full h-full">
-                        <defs>
-                            <linearGradient id="cyberGlow" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#00f0ff"/>
-                                <stop offset="100%" stop-color="#00ff9d"/>
-                            </linearGradient>
-                            <linearGradient id="goldPiece" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" stop-color="#ffe66d"/>
-                                <stop offset="100%" stop-color="#f59e0b"/>
-                            </linearGradient>
-                        </defs>
-                        <circle cx="60" cy="60" r="56" fill="#0b1526" stroke="url(#cyberGlow)" stroke-width="3"/>
-                        <path d="M 18 68 A 43 43 0 0 1 102 68" fill="none" stroke="#10b981" stroke-width="2.5" stroke-dasharray="3 2"/>
-                        <g opacity="0.45">
-                            <rect x="30" y="72" width="12" height="6" fill="#00f0ff"/>
-                            <rect x="54" y="72" width="12" height="6" fill="#00f0ff"/>
-                            <rect x="78" y="72" width="12" height="6" fill="#00f0ff"/>
-                            <rect x="42" y="78" width="12" height="6" fill="#00f0ff"/>
-                            <rect x="66" y="78" width="12" height="6" fill="#00f0ff"/>
-                        </g>
-                        <line x1="12" y1="70" x2="108" y2="70" stroke="#00f0ff" stroke-width="2"/>
-                        <line x1="20" y1="64" x2="100" y2="64" stroke="#10b981" stroke-width="1.5"/>
-                        <line x1="26" y1="64" x2="26" y2="75" stroke="#00f0ff" stroke-width="1.5"/>
-                        <line x1="48" y1="64" x2="48" y2="75" stroke="#00f0ff" stroke-width="1.5"/>
-                        <line x1="72" y1="64" x2="72" y2="75" stroke="#00f0ff" stroke-width="1.5"/>
-                        <line x1="94" y1="64" x2="94" y2="75" stroke="#00f0ff" stroke-width="1.5"/>
-                        <g transform="translate(22, 16) scale(0.65)">
-                            <path d="M22 44 L38 44 L36 38 L24 38 Z" fill="url(#goldPiece)" stroke="#fff" stroke-width="1.2"/>
-                            <path d="M25 38 L27 20 L33 20 L35 38 Z" fill="url(#goldPiece)" stroke="#fff" stroke-width="1.2"/>
-                            <circle cx="30" cy="16" r="4.5" fill="url(#goldPiece)" stroke="#fff" stroke-width="1.2"/>
-                            <path d="M30 6 L30 12 M27 9 L33 9" stroke="#ffd700" stroke-width="2.2" stroke-linecap="round"/>
-                        </g>
-                        <g transform="translate(68, 17) scale(0.65)">
-                            <path d="M18 44 L38 44 L35 38 L21 38 Z" fill="#00f0ff" stroke="#fff" stroke-width="1.2"/>
-                            <path d="M22 38 C22 28, 34 26, 33 17 C33 12, 27 10, 23 13 L18 18 L21 22 L26 20 C25 25, 20 30, 21 38 Z" fill="#00f0ff" stroke="#fff" stroke-width="1.2"/>
-                        </g>
-                        <text x="60" y="34" text-anchor="middle" fill="#a7f3d0" font-family="Orbitron, sans-serif" font-size="8" font-weight="800">C.E.I.P.</text>
-                        <text x="60" y="57" text-anchor="middle" fill="#ffffff" font-family="Fredoka, sans-serif" font-size="22" font-weight="700" style="text-shadow: 0 0 6px #00f0ff;">Muelle</text>
-                        <text x="60" y="96" text-anchor="middle" fill="#00f0ff" font-family="Orbitron, sans-serif" font-size="9.5" font-weight="800" letter-spacing="1.5">DEL TINTO</text>
-                    </svg>
+        <div class="max-w-7xl mx-auto px-3 py-2.5 flex flex-col gap-2">
+            <!-- Fila Superior: Escudo + Título a la izquierda | Encuadre, Pantalla Completa, Sonido y Perfil a la derecha -->
+            <div class="flex items-center justify-between gap-2 flex-wrap">
+                <div class="flex items-center gap-3 cursor-pointer" onclick="goHome()">
+                    <div class="w-12 h-12 rounded-2xl bg-slate-900/90 border border-cyan-400/50 flex items-center justify-center shadow-[0_0_15px_rgba(0,240,255,0.3)] shrink-0 overflow-hidden p-0.5">
+                        <svg viewBox="0 0 120 120" class="w-full h-full">
+                            <defs>
+                                <linearGradient id="cyberGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#00f0ff"/>
+                                    <stop offset="100%" stop-color="#00ff9d"/>
+                                </linearGradient>
+                                <linearGradient id="goldPiece" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#ffe66d"/>
+                                    <stop offset="100%" stop-color="#f59e0b"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="60" cy="60" r="56" fill="#0b1526" stroke="url(#cyberGlow)" stroke-width="3"/>
+                            <path d="M 18 68 A 43 43 0 0 1 102 68" fill="none" stroke="#10b981" stroke-width="2.5" stroke-dasharray="3 2"/>
+                            <g opacity="0.45">
+                                <rect x="30" y="72" width="12" height="6" fill="#00f0ff"/>
+                                <rect x="54" y="72" width="12" height="6" fill="#00f0ff"/>
+                                <rect x="78" y="72" width="12" height="6" fill="#00f0ff"/>
+                                <rect x="42" y="78" width="12" height="6" fill="#00f0ff"/>
+                                <rect x="66" y="78" width="12" height="6" fill="#00f0ff"/>
+                            </g>
+                            <line x1="12" y1="70" x2="108" y2="70" stroke="#00f0ff" stroke-width="2"/>
+                            <line x1="20" y1="64" x2="100" y2="64" stroke="#10b981" stroke-width="1.5"/>
+                            <line x1="26" y1="64" x2="26" y2="75" stroke="#00f0ff" stroke-width="1.5"/>
+                            <line x1="48" y1="64" x2="48" y2="75" stroke="#00f0ff" stroke-width="1.5"/>
+                            <line x1="72" y1="64" x2="72" y2="75" stroke="#00f0ff" stroke-width="1.5"/>
+                            <line x1="94" y1="64" x2="94" y2="75" stroke="#00f0ff" stroke-width="1.5"/>
+                            <g transform="translate(22, 16) scale(0.65)">
+                                <path d="M22 44 L38 44 L36 38 L24 38 Z" fill="url(#goldPiece)" stroke="#fff" stroke-width="1.2"/>
+                                <path d="M25 38 L27 20 L33 20 L35 38 Z" fill="url(#goldPiece)" stroke="#fff" stroke-width="1.2"/>
+                                <circle cx="30" cy="16" r="4.5" fill="url(#goldPiece)" stroke="#fff" stroke-width="1.2"/>
+                                <path d="M30 6 L30 12 M27 9 L33 9" stroke="#ffd700" stroke-width="2.2" stroke-linecap="round"/>
+                            </g>
+                            <g transform="translate(68, 17) scale(0.65)">
+                                <path d="M18 44 L38 44 L35 38 L21 38 Z" fill="#00f0ff" stroke="#fff" stroke-width="1.2"/>
+                                <path d="M22 38 C22 28, 34 26, 33 17 C33 12, 27 10, 23 13 L18 18 L21 22 L26 20 C25 25, 20 30, 21 38 Z" fill="#00f0ff" stroke="#fff" stroke-width="1.2"/>
+                            </g>
+                            <text x="60" y="34" text-anchor="middle" fill="#a7f3d0" font-family="Orbitron, sans-serif" font-size="8" font-weight="800">C.E.I.P.</text>
+                            <text x="60" y="57" text-anchor="middle" fill="#ffffff" font-family="Fredoka, sans-serif" font-size="22" font-weight="700" style="text-shadow: 0 0 6px #00f0ff;">Muelle</text>
+                            <text x="60" y="96" text-anchor="middle" fill="#00f0ff" font-family="Orbitron, sans-serif" font-size="9.5" font-weight="800" letter-spacing="1.5">DEL TINTO</text>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="font-cyber font-extrabold text-sm sm:text-lg tracking-wider text-white neon-text-cyan leading-tight">C.E.I.P. MUELLE DEL TINTO</h1>
+                        <p class="header-subtitle text-xs text-cyan-300/90 flex items-center gap-1.5 font-medium">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                            <span>Ciber-Club de Ajedrez • La Profe PerdIA</span>
+                        </p>
+                    </div>
                 </div>
-                <div>
-                    <h1 class="font-cyber font-extrabold text-sm sm:text-base tracking-wider text-white neon-text-cyan leading-tight">C.E.I.P. MUELLE DEL TINTO</h1>
-                    <p class="header-subtitle text-[11px] text-cyan-300/90 flex items-center gap-1.5 font-medium">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                        <span>Ciber-Club de Ajedrez • La Profe PerdIA</span>
-                    </p>
+
+                <!-- Controles de Pantalla, Sonido y Usuario -->
+                <div class="flex items-center gap-1.5 flex-wrap">
+                    <div class="flex items-center bg-slate-900/90 border border-cyan-500/30 rounded-xl p-0.5 text-[11px] font-bold" title="Ajustar encuadre a tu pantalla">
+                        <button onclick="setViewportMode('auto')" id="btn-view-auto" class="px-2 py-1 rounded-lg bg-cyan-500 text-slate-950 transition">Auto</button>
+                        <button onclick="setViewportMode('mobile')" id="btn-view-mobile" class="px-2 py-1 rounded-lg text-slate-300 hover:text-white transition">📱 Móvil</button>
+                        <button onclick="setViewportMode('tablet')" id="btn-view-tablet" class="px-2 py-1 rounded-lg text-slate-300 hover:text-white transition">📟 Tablet</button>
+                        <button onclick="setViewportMode('pdi')" id="btn-view-pdi" class="px-2 py-1 rounded-lg text-slate-300 hover:text-white transition">🖥️ PDI</button>
+                    </div>
+
+                    <button onclick="toggleFullScreen()" class="w-8 h-8 rounded-xl bg-slate-800/80 border border-cyan-500/30 flex items-center justify-center text-cyan-300 hover:bg-cyan-950 transition text-sm" title="Pantalla Completa (PDI)">
+                        ⛶
+                    </button>
+
+                    <button onclick="toggleSound()" id="sound-toggle" class="w-8 h-8 rounded-xl bg-slate-800/80 border border-cyan-500/30 flex items-center justify-center text-cyan-300 hover:bg-cyan-950 transition text-sm" title="Activar/Silenciar efectos de sonido">
+                        🔊
+                    </button>
+
+                    <div id="user-badge" class="hidden items-center gap-2 bg-slate-900/90 px-2.5 py-1 rounded-full border border-cyan-400/40 shadow-[0_0_10px_rgba(0,240,255,0.2)]">
+                        <span id="badge-name" class="font-bold text-xs text-cyan-300"></span>
+                        <button onclick="logout()" class="text-[10px] bg-pink-600/30 hover:bg-pink-600/60 text-pink-200 border border-pink-500/40 px-2 py-0.5 rounded-full transition">Salir</button>
+                    </div>
                 </div>
             </div>
 
-            <!-- CONTROLES SUPERIORES: MÚSICA, CAMBIAR TABLEROS, REWARDS/LEYENDAS, ACADEMIA, VISTA -->
-            <div class="flex items-center gap-1.5 flex-wrap">
-                <button onclick="toggleClassicalMusic()" id="music-toggle" class="text-xs bg-purple-500/20 hover:bg-purple-500/35 text-purple-200 border border-purple-400/50 px-2.5 py-1.5 rounded-xl font-bold transition flex items-center gap-1" title="Música clásica suave antes de jugar">
-                    <span id="music-icon">🎻</span> <span class="hidden lg:inline" id="music-label">Música Clásica</span>
+            <!-- Fila Inferior justo debajo de C.E.I.P. MUELLE DEL TINTO: Música Clásica, Cambiar Tableros, Logros e Historias y Academia -->
+            <div class="flex items-center gap-2 flex-wrap pt-1 border-t border-cyan-500/15">
+                <button onclick="toggleClassicalMusic()" id="music-toggle" class="text-xs bg-purple-500/20 hover:bg-purple-500/35 text-purple-200 border border-purple-400/50 px-3 py-1.5 rounded-xl font-bold transition flex items-center gap-1.5" title="Música clásica suave antes de jugar">
+                    <span id="music-icon">🎻</span> <span id="music-label">Música Clásica</span>
                 </button>
 
-                <!-- NUEVO BOTÓN: CAMBIAR TABLEROS -->
-                <button onclick="openBoardThemeModal()" class="text-xs bg-cyan-500/20 hover:bg-cyan-500/35 text-cyan-200 border border-cyan-400/50 px-2.5 py-1.5 rounded-xl font-bold transition flex items-center gap-1" title="Elige entre 6 diseños de tablero">
-                    <span>🎨</span> <span class="hidden sm:inline">Cambiar Tableros</span>
+                <button onclick="openBoardThemeModal()" class="text-xs bg-cyan-500/20 hover:bg-cyan-500/35 text-cyan-200 border border-cyan-400/50 px-3 py-1.5 rounded-xl font-bold transition flex items-center gap-1.5" title="Elige entre 6 diseños de tablero">
+                    <span>🎨</span> <span>Cambiar Tableros</span>
                 </button>
 
-                <!-- NUEVO BOTÓN: LOGROS Y LEYENDAS DEL AJEDREZ -->
-                <button onclick="openRewardsAndLegendsModal()" class="text-xs bg-pink-500/20 hover:bg-pink-500/35 text-pink-200 border border-pink-400/50 px-2.5 py-1.5 rounded-xl font-bold transition flex items-center gap-1" title="Tus medallas e historias de ajedrecistas famosos">
-                    <span>🏅</span> <span class="hidden sm:inline">Logros e Historias</span>
+                <button onclick="openRewardsAndLegendsModal()" class="text-xs bg-pink-500/20 hover:bg-pink-500/35 text-pink-200 border border-pink-400/50 px-3 py-1.5 rounded-xl font-bold transition flex items-center gap-1.5" title="Tus medallas e historias de ajedrecistas famosos">
+                    <span>🏅</span> <span>Logros e Historias</span>
                 </button>
 
-                <button onclick="openTutorialModal()" class="text-xs bg-amber-500/20 hover:bg-amber-500/35 text-amber-300 border border-amber-400/50 px-2.5 py-1.5 rounded-xl font-bold transition flex items-center gap-1" title="Aprende cómo mueven las piezas">
-                    <span>🎓</span> <span class="hidden sm:inline">Academia</span>
+                <button onclick="openTutorialModal()" class="text-xs bg-amber-500/20 hover:bg-amber-500/35 text-amber-300 border border-amber-400/50 px-3 py-1.5 rounded-xl font-bold transition flex items-center gap-1.5" title="Aprende cómo mueven las piezas">
+                    <span>🎓</span> <span>Academia</span>
                 </button>
-
-                <div class="flex items-center bg-slate-900/90 border border-cyan-500/30 rounded-xl p-0.5 text-[11px] font-bold" title="Ajustar encuadre a tu pantalla">
-                    <button onclick="setViewportMode('auto')" id="btn-view-auto" class="px-2 py-1 rounded-lg bg-cyan-500 text-slate-950 transition">Auto</button>
-                    <button onclick="setViewportMode('mobile')" id="btn-view-mobile" class="px-2 py-1 rounded-lg text-slate-300 hover:text-white transition">📱 Móvil</button>
-                    <button onclick="setViewportMode('tablet')" id="btn-view-tablet" class="px-2 py-1 rounded-lg text-slate-300 hover:text-white transition">📟 Tablet</button>
-                    <button onclick="setViewportMode('pdi')" id="btn-view-pdi" class="px-2 py-1 rounded-lg text-slate-300 hover:text-white transition">🖥️ PDI</button>
-                </div>
-
-                <button onclick="toggleFullScreen()" class="w-8 h-8 rounded-xl bg-slate-800/80 border border-cyan-500/30 flex items-center justify-center text-cyan-300 hover:bg-cyan-950 transition text-sm" title="Pantalla Completa (PDI)">
-                    ⛶
-                </button>
-
-                <button onclick="toggleSound()" id="sound-toggle" class="w-8 h-8 rounded-xl bg-slate-800/80 border border-cyan-500/30 flex items-center justify-center text-cyan-300 hover:bg-cyan-950 transition text-sm" title="Activar/Silenciar efectos de sonido">
-                    🔊
-                </button>
-
-                <div id="user-badge" class="hidden items-center gap-2 bg-slate-900/90 px-2.5 py-1 rounded-full border border-cyan-400/40 shadow-[0_0_10px_rgba(0,240,255,0.2)]">
-                    <span id="badge-name" class="font-bold text-xs text-cyan-300"></span>
-                    <button onclick="logout()" class="text-[10px] bg-pink-600/30 hover:bg-pink-600/60 text-pink-200 border border-pink-500/40 px-2 py-0.5 rounded-full transition">Salir</button>
-                </div>
             </div>
         </div>
     </header>
@@ -512,27 +516,27 @@
                 </div>
             </div>
 
-            <!-- BANNER DOS JUGADORES EN LA MISMA PANTALLA -->
+            <!-- BANNER DOS JUGADORES EN LA MISMA PANTALLA (ENCAJADO PERFECTO) -->
             <div class="glass-panel rounded-3xl p-5 sm:p-6 border-2 border-emerald-400/50 bg-gradient-to-r from-slate-900/90 via-emerald-950/30 to-cyan-950/40 shadow-[0_0_25px_rgba(0,255,157,0.15)]">
-                <div class="flex flex-col lg:flex-row items-center justify-between gap-4">
-                    <div class="flex items-center gap-4 text-center lg:text-left">
+                <div class="flex flex-col gap-4">
+                    <div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
                         <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 border-2 border-emerald-400 flex items-center justify-center text-3xl shrink-0 shadow-[0_0_15px_rgba(0,255,157,0.3)]">
                             🖥️
                         </div>
                         <div>
                             <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-400/40 text-xs font-bold px-3 py-0.5 rounded-full uppercase tracking-wider">Especial Pizarra Digital (PDI) y Tablet</span>
-                            <h3 class="font-cyber text-xl sm:text-2xl font-black text-white mt-1 tracking-wide">DOS JUGADORES EN LA MISMA PANTALLA</h3>
+                            <h3 class="font-cyber text-lg sm:text-2xl font-black text-white mt-1 tracking-wide">DOS JUGADORES EN LA MISMA PANTALLA</h3>
                             <p class="text-xs sm:text-sm text-emerald-100/80">Escribid vuestros nombres (opcional) y jugad frente a frente en doble tablero táctil:</p>
                         </div>
                     </div>
 
-                    <div class="flex flex-col sm:flex-row items-center gap-2.5 w-full lg:w-auto">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full">
                         <input type="text" id="lobby-p1-name" maxlength="16" placeholder="⚪ Jugador 1 (Blancas)"
-                            class="w-full sm:w-44 px-3.5 py-3 rounded-xl bg-slate-950/90 border border-emerald-400/50 text-white placeholder-slate-400 text-sm font-bold focus:outline-none focus:border-emerald-300">
+                            class="w-full px-4 py-3 rounded-xl bg-slate-950/90 border border-emerald-400/50 text-white placeholder-slate-400 text-sm font-bold focus:outline-none focus:border-emerald-300">
                         <input type="text" id="lobby-p2-name" maxlength="16" placeholder="⚫ Jugador 2 (Negras)"
-                            class="w-full sm:w-44 px-3.5 py-3 rounded-xl bg-slate-950/90 border border-cyan-400/50 text-white placeholder-slate-400 text-sm font-bold focus:outline-none focus:border-cyan-300">
+                            class="w-full px-4 py-3 rounded-xl bg-slate-950/90 border border-cyan-400/50 text-white placeholder-slate-400 text-sm font-bold focus:outline-none focus:border-cyan-300">
                         <button onclick="startLocalTwoPlayersFromLobby()"
-                            class="w-full sm:w-auto bg-gradient-to-r from-emerald-400 to-cyan-400 hover:from-emerald-300 hover:to-cyan-300 text-slate-950 font-cyber font-black px-6 py-3.5 rounded-xl text-sm sm:text-base shadow-[0_0_20px_rgba(0,255,157,0.45)] transition transform hover:scale-105 cursor-pointer shrink-0">
+                            class="w-full bg-gradient-to-r from-emerald-400 to-cyan-400 hover:from-emerald-300 hover:to-cyan-300 text-slate-950 font-cyber font-black px-5 py-3 rounded-xl text-sm sm:text-base shadow-[0_0_20px_rgba(0,255,157,0.45)] transition hover:brightness-110 cursor-pointer">
                             👥 ¡JUGAR YA! ▶
                         </button>
                     </div>

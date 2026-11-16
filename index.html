@@ -265,104 +265,99 @@
 </head>
 <body class="flex flex-col justify-between view-auto">
 
-    <!-- HEADER FUTURISTA -->
+    <!-- HEADER FUTURISTA CON MENÚ A LA DERECHA -->
     <header class="glass-panel border-b border-cyan-500/30 sticky top-0 z-30">
-        <div class="max-w-7xl mx-auto px-3 py-2.5 flex flex-col gap-2">
-            <!-- Fila Superior: Escudo + Título a la izquierda | Encuadre, Pantalla Completa, Sonido y Perfil a la derecha -->
-            <div class="flex items-center justify-between gap-2 flex-wrap">
-                <div class="flex items-center gap-3 cursor-pointer" onclick="goHome()">
-                    <div class="w-12 h-12 rounded-2xl bg-slate-900/90 border border-cyan-400/50 flex items-center justify-center shadow-[0_0_15px_rgba(0,240,255,0.3)] shrink-0 overflow-hidden p-0.5">
-                        <svg viewBox="0 0 120 120" class="w-full h-full">
-                            <defs>
-                                <linearGradient id="cyberGlow" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#00f0ff"/>
-                                    <stop offset="100%" stop-color="#00ff9d"/>
-                                </linearGradient>
-                                <linearGradient id="goldPiece" x1="0%" y1="0%" x2="0%" y2="100%">
-                                    <stop offset="0%" stop-color="#ffe66d"/>
-                                    <stop offset="100%" stop-color="#f59e0b"/>
-                                </linearGradient>
-                            </defs>
-                            <circle cx="60" cy="60" r="56" fill="#0b1526" stroke="url(#cyberGlow)" stroke-width="3"/>
-                            <path d="M 18 68 A 43 43 0 0 1 102 68" fill="none" stroke="#10b981" stroke-width="2.5" stroke-dasharray="3 2"/>
-                            <g opacity="0.45">
-                                <rect x="30" y="72" width="12" height="6" fill="#00f0ff"/>
-                                <rect x="54" y="72" width="12" height="6" fill="#00f0ff"/>
-                                <rect x="78" y="72" width="12" height="6" fill="#00f0ff"/>
-                                <rect x="42" y="78" width="12" height="6" fill="#00f0ff"/>
-                                <rect x="66" y="78" width="12" height="6" fill="#00f0ff"/>
-                            </g>
-                            <line x1="12" y1="70" x2="108" y2="70" stroke="#00f0ff" stroke-width="2"/>
-                            <line x1="20" y1="64" x2="100" y2="64" stroke="#10b981" stroke-width="1.5"/>
-                            <line x1="26" y1="64" x2="26" y2="75" stroke="#00f0ff" stroke-width="1.5"/>
-                            <line x1="48" y1="64" x2="48" y2="75" stroke="#00f0ff" stroke-width="1.5"/>
-                            <line x1="72" y1="64" x2="72" y2="75" stroke="#00f0ff" stroke-width="1.5"/>
-                            <line x1="94" y1="64" x2="94" y2="75" stroke="#00f0ff" stroke-width="1.5"/>
-                            <g transform="translate(22, 16) scale(0.65)">
-                                <path d="M22 44 L38 44 L36 38 L24 38 Z" fill="url(#goldPiece)" stroke="#fff" stroke-width="1.2"/>
-                                <path d="M25 38 L27 20 L33 20 L35 38 Z" fill="url(#goldPiece)" stroke="#fff" stroke-width="1.2"/>
-                                <circle cx="30" cy="16" r="4.5" fill="url(#goldPiece)" stroke="#fff" stroke-width="1.2"/>
-                                <path d="M30 6 L30 12 M27 9 L33 9" stroke="#ffd700" stroke-width="2.2" stroke-linecap="round"/>
-                            </g>
-                            <g transform="translate(68, 17) scale(0.65)">
-                                <path d="M18 44 L38 44 L35 38 L21 38 Z" fill="#00f0ff" stroke="#fff" stroke-width="1.2"/>
-                                <path d="M22 38 C22 28, 34 26, 33 17 C33 12, 27 10, 23 13 L18 18 L21 22 L26 20 C25 25, 20 30, 21 38 Z" fill="#00f0ff" stroke="#fff" stroke-width="1.2"/>
-                            </g>
-                            <text x="60" y="34" text-anchor="middle" fill="#a7f3d0" font-family="Orbitron, sans-serif" font-size="8" font-weight="800">C.E.I.P.</text>
-                            <text x="60" y="57" text-anchor="middle" fill="#ffffff" font-family="Fredoka, sans-serif" font-size="22" font-weight="700" style="text-shadow: 0 0 6px #00f0ff;">Muelle</text>
-                            <text x="60" y="96" text-anchor="middle" fill="#00f0ff" font-family="Orbitron, sans-serif" font-size="9.5" font-weight="800" letter-spacing="1.5">DEL TINTO</text>
-                        </svg>
-                    </div>
-                    <div>
-                        <h1 class="font-cyber font-extrabold text-sm sm:text-lg tracking-wider text-white neon-text-cyan leading-tight">C.E.I.P. MUELLE DEL TINTO</h1>
-                        <p class="header-subtitle text-xs text-cyan-300/90 flex items-center gap-1.5 font-medium">
-                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                            <span>Ciber-Club de Ajedrez • La Profe PerdIA</span>
-                        </p>
-                    </div>
+        <div class="max-w-7xl mx-auto px-3 sm:px-4 py-2.5 flex items-center justify-between gap-3 flex-wrap">
+            <!-- Izquierda: Escudo y Nombre del Colegio -->
+            <div class="flex items-center gap-3 cursor-pointer shrink-0" onclick="goHome()">
+                <div class="w-12 h-12 rounded-2xl bg-slate-900/90 border border-cyan-400/50 flex items-center justify-center shadow-[0_0_15px_rgba(0,240,255,0.3)] shrink-0 overflow-hidden p-0.5">
+                    <svg viewBox="0 0 120 120" class="w-full h-full">
+                        <defs>
+                            <linearGradient id="cyberGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#00f0ff"/>
+                                <stop offset="100%" stop-color="#00ff9d"/>
+                            </linearGradient>
+                            <linearGradient id="goldPiece" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#ffe66d"/>
+                                <stop offset="100%" stop-color="#f59e0b"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="60" cy="60" r="56" fill="#0b1526" stroke="url(#cyberGlow)" stroke-width="3"/>
+                        <path d="M 18 68 A 43 43 0 0 1 102 68" fill="none" stroke="#10b981" stroke-width="2.5" stroke-dasharray="3 2"/>
+                        <g opacity="0.45">
+                            <rect x="30" y="72" width="12" height="6" fill="#00f0ff"/>
+                            <rect x="54" y="72" width="12" height="6" fill="#00f0ff"/>
+                            <rect x="78" y="72" width="12" height="6" fill="#00f0ff"/>
+                            <rect x="42" y="78" width="12" height="6" fill="#00f0ff"/>
+                            <rect x="66" y="78" width="12" height="6" fill="#00f0ff"/>
+                        </g>
+                        <line x1="12" y1="70" x2="108" y2="70" stroke="#00f0ff" stroke-width="2"/>
+                        <line x1="20" y1="64" x2="100" y2="64" stroke="#10b981" stroke-width="1.5"/>
+                        <line x1="26" y1="64" x2="26" y2="75" stroke="#00f0ff" stroke-width="1.5"/>
+                        <line x1="48" y1="64" x2="48" y2="75" stroke="#00f0ff" stroke-width="1.5"/>
+                        <line x1="72" y1="64" x2="72" y2="75" stroke="#00f0ff" stroke-width="1.5"/>
+                        <line x1="94" y1="64" x2="94" y2="75" stroke="#00f0ff" stroke-width="1.5"/>
+                        <g transform="translate(22, 16) scale(0.65)">
+                            <path d="M22 44 L38 44 L36 38 L24 38 Z" fill="url(#goldPiece)" stroke="#fff" stroke-width="1.2"/>
+                            <path d="M25 38 L27 20 L33 20 L35 38 Z" fill="url(#goldPiece)" stroke="#fff" stroke-width="1.2"/>
+                            <circle cx="30" cy="16" r="4.5" fill="url(#goldPiece)" stroke="#fff" stroke-width="1.2"/>
+                            <path d="M30 6 L30 12 M27 9 L33 9" stroke="#ffd700" stroke-width="2.2" stroke-linecap="round"/>
+                        </g>
+                        <g transform="translate(68, 17) scale(0.65)">
+                            <path d="M18 44 L38 44 L35 38 L21 38 Z" fill="#00f0ff" stroke="#fff" stroke-width="1.2"/>
+                            <path d="M22 38 C22 28, 34 26, 33 17 C33 12, 27 10, 23 13 L18 18 L21 22 L26 20 C25 25, 20 30, 21 38 Z" fill="#00f0ff" stroke="#fff" stroke-width="1.2"/>
+                        </g>
+                        <text x="60" y="34" text-anchor="middle" fill="#a7f3d0" font-family="Orbitron, sans-serif" font-size="8" font-weight="800">C.E.I.P.</text>
+                        <text x="60" y="57" text-anchor="middle" fill="#ffffff" font-family="Fredoka, sans-serif" font-size="22" font-weight="700" style="text-shadow: 0 0 6px #00f0ff;">Muelle</text>
+                        <text x="60" y="96" text-anchor="middle" fill="#00f0ff" font-family="Orbitron, sans-serif" font-size="9.5" font-weight="800" letter-spacing="1.5">DEL TINTO</text>
+                    </svg>
                 </div>
-
-                <!-- Controles de Pantalla, Sonido y Usuario -->
-                <div class="flex items-center gap-1.5 flex-wrap">
-                    <div class="flex items-center bg-slate-900/90 border border-cyan-500/30 rounded-xl p-0.5 text-[11px] font-bold" title="Ajustar encuadre a tu pantalla">
-                        <button onclick="setViewportMode('auto')" id="btn-view-auto" class="px-2 py-1 rounded-lg bg-cyan-500 text-slate-950 transition">Auto</button>
-                        <button onclick="setViewportMode('mobile')" id="btn-view-mobile" class="px-2 py-1 rounded-lg text-slate-300 hover:text-white transition">📱 Móvil</button>
-                        <button onclick="setViewportMode('tablet')" id="btn-view-tablet" class="px-2 py-1 rounded-lg text-slate-300 hover:text-white transition">📟 Tablet</button>
-                        <button onclick="setViewportMode('pdi')" id="btn-view-pdi" class="px-2 py-1 rounded-lg text-slate-300 hover:text-white transition">🖥️ PDI</button>
-                    </div>
-
-                    <button onclick="toggleFullScreen()" class="w-8 h-8 rounded-xl bg-slate-800/80 border border-cyan-500/30 flex items-center justify-center text-cyan-300 hover:bg-cyan-950 transition text-sm" title="Pantalla Completa (PDI)">
-                        ⛶
-                    </button>
-
-                    <button onclick="toggleSound()" id="sound-toggle" class="w-8 h-8 rounded-xl bg-slate-800/80 border border-cyan-500/30 flex items-center justify-center text-cyan-300 hover:bg-cyan-950 transition text-sm" title="Activar/Silenciar efectos de sonido">
-                        🔊
-                    </button>
-
-                    <div id="user-badge" class="hidden items-center gap-2 bg-slate-900/90 px-2.5 py-1 rounded-full border border-cyan-400/40 shadow-[0_0_10px_rgba(0,240,255,0.2)]">
-                        <span id="badge-name" class="font-bold text-xs text-cyan-300"></span>
-                        <button onclick="logout()" class="text-[10px] bg-pink-600/30 hover:bg-pink-600/60 text-pink-200 border border-pink-500/40 px-2 py-0.5 rounded-full transition">Salir</button>
-                    </div>
+                <div>
+                    <h1 class="font-cyber font-extrabold text-sm sm:text-lg tracking-wider text-white neon-text-cyan leading-tight">C.E.I.P. MUELLE DEL TINTO</h1>
+                    <p class="header-subtitle text-xs text-cyan-300/90 flex items-center gap-1.5 font-medium">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        <span>Ciber-Club de Ajedrez • La Profe PerdIA</span>
+                    </p>
                 </div>
             </div>
 
-            <!-- Fila Inferior justo debajo de C.E.I.P. MUELLE DEL TINTO: Música Clásica, Cambiar Tableros, Logros e Historias y Academia -->
-            <div class="flex items-center gap-2 flex-wrap pt-1 border-t border-cyan-500/15">
-                <button onclick="toggleClassicalMusic()" id="music-toggle" class="text-xs bg-purple-500/20 hover:bg-purple-500/35 text-purple-200 border border-purple-400/50 px-3 py-1.5 rounded-xl font-bold transition flex items-center gap-1.5" title="Música clásica suave antes de jugar">
-                    <span id="music-icon">🎻</span> <span id="music-label">Música Clásica</span>
+            <!-- Derecha: Menú completo alineado a la derecha -->
+            <div class="flex items-center justify-end gap-1.5 sm:gap-2 flex-wrap ml-auto">
+                <button onclick="toggleClassicalMusic()" id="music-toggle" class="text-xs bg-purple-500/20 hover:bg-purple-500/35 text-purple-200 border border-purple-400/50 px-2.5 py-1.5 rounded-xl font-bold transition flex items-center gap-1" title="Música clásica suave antes de jugar">
+                    <span id="music-icon">🎻</span> <span class="hidden xl:inline" id="music-label">Música Clásica</span>
                 </button>
 
-                <button onclick="openBoardThemeModal()" class="text-xs bg-cyan-500/20 hover:bg-cyan-500/35 text-cyan-200 border border-cyan-400/50 px-3 py-1.5 rounded-xl font-bold transition flex items-center gap-1.5" title="Elige entre 6 diseños de tablero">
-                    <span>🎨</span> <span>Cambiar Tableros</span>
+                <button onclick="openBoardThemeModal()" class="text-xs bg-cyan-500/20 hover:bg-cyan-500/35 text-cyan-200 border border-cyan-400/50 px-2.5 py-1.5 rounded-xl font-bold transition flex items-center gap-1" title="Elige entre 6 diseños de tablero">
+                    <span>🎨</span> <span class="hidden md:inline">Cambiar Tableros</span>
                 </button>
 
-                <button onclick="openRewardsAndLegendsModal()" class="text-xs bg-pink-500/20 hover:bg-pink-500/35 text-pink-200 border border-pink-400/50 px-3 py-1.5 rounded-xl font-bold transition flex items-center gap-1.5" title="Tus medallas e historias de ajedrecistas famosos">
-                    <span>🏅</span> <span>Logros e Historias</span>
+                <button onclick="openRewardsAndLegendsModal()" class="text-xs bg-pink-500/20 hover:bg-pink-500/35 text-pink-200 border border-pink-400/50 px-2.5 py-1.5 rounded-xl font-bold transition flex items-center gap-1" title="Tus medallas e historias de ajedrecistas famosos">
+                    <span>🏅</span> <span class="hidden md:inline">Logros e Historias</span>
                 </button>
 
-                <button onclick="openTutorialModal()" class="text-xs bg-amber-500/20 hover:bg-amber-500/35 text-amber-300 border border-amber-400/50 px-3 py-1.5 rounded-xl font-bold transition flex items-center gap-1.5" title="Aprende cómo mueven las piezas">
-                    <span>🎓</span> <span>Academia</span>
+                <button onclick="openTutorialModal()" class="text-xs bg-amber-500/20 hover:bg-amber-500/35 text-amber-300 border border-amber-400/50 px-2.5 py-1.5 rounded-xl font-bold transition flex items-center gap-1" title="Aprende cómo mueven las piezas">
+                    <span>🎓</span> <span class="hidden md:inline">Academia</span>
                 </button>
+
+                <div class="flex items-center bg-slate-900/90 border border-cyan-500/30 rounded-xl p-0.5 text-[11px] font-bold" title="Ajustar encuadre a tu pantalla">
+                    <button onclick="setViewportMode('auto')" id="btn-view-auto" class="px-2 py-1 rounded-lg bg-cyan-500 text-slate-950 transition">Auto</button>
+                    <button onclick="setViewportMode('mobile')" id="btn-view-mobile" class="px-2 py-1 rounded-lg text-slate-300 hover:text-white transition">📱 Móvil</button>
+                    <button onclick="setViewportMode('tablet')" id="btn-view-tablet" class="px-2 py-1 rounded-lg text-slate-300 hover:text-white transition">📟 Tablet</button>
+                    <button onclick="setViewportMode('pdi')" id="btn-view-pdi" class="px-2 py-1 rounded-lg text-slate-300 hover:text-white transition">🖥️ PDI</button>
+                </div>
+
+                <button onclick="toggleFullScreen()" class="w-8 h-8 rounded-xl bg-slate-800/80 border border-cyan-500/30 flex items-center justify-center text-cyan-300 hover:bg-cyan-950 transition text-sm" title="Pantalla Completa (PDI)">
+                    ⛶
+                </button>
+
+                <button onclick="toggleSound()" id="sound-toggle" class="w-8 h-8 rounded-xl bg-slate-800/80 border border-cyan-500/30 flex items-center justify-center text-cyan-300 hover:bg-cyan-950 transition text-sm" title="Activar/Silenciar efectos de sonido">
+                    🔊
+                </button>
+
+                <div id="user-badge" class="hidden items-center gap-2 bg-slate-900/90 px-2.5 py-1 rounded-full border border-cyan-400/40 shadow-[0_0_10px_rgba(0,240,255,0.2)]">
+                    <span id="badge-name" class="font-bold text-xs text-cyan-300"></span>
+                    <button onclick="logout()" class="text-[10px] bg-pink-600/30 hover:bg-pink-600/60 text-pink-200 border border-pink-500/40 px-2 py-0.5 rounded-full transition">Salir</button>
+                </div>
             </div>
         </div>
     </header>
@@ -473,12 +468,16 @@
                 </div>
             </div>
 
-            <div class="flex flex-wrap justify-center gap-4 text-xs pt-1">
-                <button onclick="openTutorialModal()" class="text-amber-300 hover:underline font-bold">🎓 Academia: Aprende a jugar</button>
-                <span class="text-slate-600">•</span>
-                <button onclick="openRewardsAndLegendsModal('legends')" class="text-pink-300 hover:underline font-bold">📖 Historias de Ajedrecistas Famosos</button>
-                <span class="text-slate-600">•</span>
-                <button onclick="openBoardThemeModal()" class="text-cyan-300 hover:underline font-bold">🎨 Elegir estilo de tablero</button>
+            <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-5 text-sm sm:text-base pt-2">
+                <button onclick="openTutorialModal()" class="bg-amber-500/15 hover:bg-amber-500/25 border border-amber-400/40 text-amber-300 px-4 py-2 rounded-2xl font-bold transition shadow-sm">
+                    🎓 Academia: Aprende a jugar
+                </button>
+                <button onclick="openRewardsAndLegendsModal('legends')" class="bg-pink-500/15 hover:bg-pink-500/25 border border-pink-400/40 text-pink-300 px-4 py-2 rounded-2xl font-bold transition shadow-sm">
+                    📖 Historias de Ajedrecistas Famosos
+                </button>
+                <button onclick="openBoardThemeModal()" class="bg-cyan-500/15 hover:bg-cyan-500/25 border border-cyan-400/40 text-cyan-300 px-4 py-2 rounded-2xl font-bold transition shadow-sm">
+                    🎨 Elegir estilo de tablero
+                </button>
             </div>
         </section>
 
@@ -516,27 +515,27 @@
                 </div>
             </div>
 
-            <!-- BANNER DOS JUGADORES EN LA MISMA PANTALLA (ENCAJADO PERFECTO) -->
-            <div class="glass-panel rounded-3xl p-5 sm:p-6 border-2 border-emerald-400/50 bg-gradient-to-r from-slate-900/90 via-emerald-950/30 to-cyan-950/40 shadow-[0_0_25px_rgba(0,255,157,0.15)]">
-                <div class="flex flex-col gap-4">
+            <!-- BANNER DOS JUGADORES EN LA MISMA PANTALLA (ENCAJADO PERFECTO SIN DESBORDES) -->
+            <div class="glass-panel rounded-3xl p-5 sm:p-6 border-2 border-emerald-400/50 bg-gradient-to-r from-slate-900/90 via-emerald-950/30 to-cyan-950/40 shadow-[0_0_25px_rgba(0,255,157,0.15)] w-full overflow-hidden box-border">
+                <div class="flex flex-col gap-4 w-full">
                     <div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
                         <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 border-2 border-emerald-400 flex items-center justify-center text-3xl shrink-0 shadow-[0_0_15px_rgba(0,255,157,0.3)]">
                             🖥️
                         </div>
-                        <div>
+                        <div class="min-w-0">
                             <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-400/40 text-xs font-bold px-3 py-0.5 rounded-full uppercase tracking-wider">Especial Pizarra Digital (PDI) y Tablet</span>
                             <h3 class="font-cyber text-lg sm:text-2xl font-black text-white mt-1 tracking-wide">DOS JUGADORES EN LA MISMA PANTALLA</h3>
                             <p class="text-xs sm:text-sm text-emerald-100/80">Escribid vuestros nombres (opcional) y jugad frente a frente en doble tablero táctil:</p>
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 w-full">
                         <input type="text" id="lobby-p1-name" maxlength="16" placeholder="⚪ Jugador 1 (Blancas)"
-                            class="w-full px-4 py-3 rounded-xl bg-slate-950/90 border border-emerald-400/50 text-white placeholder-slate-400 text-sm font-bold focus:outline-none focus:border-emerald-300">
+                            class="w-full min-w-0 box-border px-4 py-3 rounded-xl bg-slate-950/90 border border-emerald-400/50 text-white placeholder-slate-400 text-sm font-bold focus:outline-none focus:border-emerald-300">
                         <input type="text" id="lobby-p2-name" maxlength="16" placeholder="⚫ Jugador 2 (Negras)"
-                            class="w-full px-4 py-3 rounded-xl bg-slate-950/90 border border-cyan-400/50 text-white placeholder-slate-400 text-sm font-bold focus:outline-none focus:border-cyan-300">
+                            class="w-full min-w-0 box-border px-4 py-3 rounded-xl bg-slate-950/90 border border-cyan-400/50 text-white placeholder-slate-400 text-sm font-bold focus:outline-none focus:border-cyan-300">
                         <button onclick="startLocalTwoPlayersFromLobby()"
-                            class="w-full bg-gradient-to-r from-emerald-400 to-cyan-400 hover:from-emerald-300 hover:to-cyan-300 text-slate-950 font-cyber font-black px-5 py-3 rounded-xl text-sm sm:text-base shadow-[0_0_20px_rgba(0,255,157,0.45)] transition hover:brightness-110 cursor-pointer">
+                            class="w-full min-w-0 box-border bg-gradient-to-r from-emerald-400 to-cyan-400 hover:from-emerald-300 hover:to-cyan-300 text-slate-950 font-cyber font-black px-4 py-3 rounded-xl text-sm sm:text-base shadow-[0_0_20px_rgba(0,255,157,0.45)] transition hover:brightness-110 cursor-pointer">
                             👥 ¡JUGAR YA! ▶
                         </button>
                     </div>
@@ -565,8 +564,30 @@
                     </div>
 
                     <button id="btn-wait-rival" onclick="startWaiting()"
-                        class="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-cyber font-black py-3.5 rounded-xl transition shadow-[0_0_15px_rgba(0,240,255,0.3)] cursor-pointer text-sm sm:text-base tracking-wide">
-                        🙋‍♂️ PONERME EN ESPERA DE RIVAL
+                        class="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-cyber font-black py-3 rounded-xl transition shadow-[0_0_15px_rgba(0,240,255,0.3)] cursor-pointer text-sm sm:text-base tracking-wide flex items-center justify-center gap-2.5">
+                        <span class="w-8 h-8 rounded-lg bg-slate-950/20 flex items-center justify-center shrink-0 overflow-hidden">
+                            <svg viewBox="0 0 100 65" class="w-full h-full">
+                                <!-- Niña pelo moreno (izquierda) -->
+                                <path d="M12 36 C10 16, 22 10, 30 10 C38 10, 50 16, 48 36 C50 46, 46 52, 42 54 L18 54 C14 52, 10 46, 12 36 Z" fill="#1c110a"/>
+                                <circle cx="15" cy="22" r="4.5" fill="#ff2a85"/>
+                                <circle cx="45" cy="22" r="4.5" fill="#ff2a85"/>
+                                <path d="M20 30 C20 20, 40 20, 40 30 C40 41, 35 46, 30 46 C25 46, 20 41, 20 30 Z" fill="#f1c29b"/>
+                                <path d="M20 28 C22 18, 36 17, 40 26 C37 19, 25 18, 20 28 Z" fill="#1c110a"/>
+                                <circle cx="26" cy="31" r="1.5" fill="#0f172a"/>
+                                <circle cx="34" cy="31" r="1.5" fill="#0f172a"/>
+                                <path d="M26 38 Q30 41 34 38" fill="none" stroke="#9f1239" stroke-width="1.8" stroke-linecap="round"/>
+                                <path d="M16 62 C18 50, 24 48, 30 48 C36 48, 42 50, 44 62 Z" fill="#ff2a85"/>
+                                <!-- Niño pelo moreno (derecha) -->
+                                <path d="M56 26 C56 14, 84 14, 84 26 C84 22, 78 16, 70 16 C62 16, 56 22, 56 26 Z" fill="#1c110a"/>
+                                <path d="M60 30 C60 20, 80 20, 80 30 C80 41, 75 46, 70 46 C65 46, 60 41, 60 30 Z" fill="#f1c29b"/>
+                                <path d="M58 28 C58 14, 82 14, 82 28 C78 21, 64 21, 58 28 Z" fill="#1c110a"/>
+                                <circle cx="66" cy="31" r="1.5" fill="#0f172a"/>
+                                <circle cx="74" cy="31" r="1.5" fill="#0f172a"/>
+                                <path d="M66 38 Q70 41 74 38" fill="none" stroke="#9f1239" stroke-width="1.8" stroke-linecap="round"/>
+                                <path d="M56 62 C58 50, 64 48, 70 48 C76 48, 82 50, 84 62 Z" fill="#0284c7"/>
+                            </svg>
+                        </span>
+                        <span>PONERME EN ESPERA DE RIVAL</span>
                     </button>
                 </div>
 
@@ -576,14 +597,48 @@
 
                     <div>
                         <div class="flex items-center justify-between mb-3">
-                            <span class="bg-pink-500/20 text-pink-300 border border-pink-400/40 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">IA Educativa</span>
+                            <span class="bg-pink-500/20 text-pink-300 border border-pink-400/40 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">🤖 Contra la Máquina</span>
                             <span class="text-xs font-bold text-cyan-300">@profeperdIA</span>
                         </div>
                         <div class="flex items-center gap-3 mb-3">
-                            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-pink-500 to-purple-700 border border-pink-300/60 flex items-center justify-center text-2xl shadow-[0_0_15px_rgba(255,42,133,0.4)] shrink-0">👩‍🏫</div>
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500/30 to-cyan-500/30 border-2 border-pink-400/70 flex items-center justify-center shadow-[0_0_18px_rgba(255,42,133,0.45)] shrink-0 overflow-hidden p-0.5">
+                                <svg viewBox="0 0 100 100" class="w-full h-full">
+                                    <defs>
+                                        <linearGradient id="bgProfe" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#1e1b4b"/>
+                                            <stop offset="100%" stop-color="#831843"/>
+                                        </linearGradient>
+                                        <linearGradient id="neonRim" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" stop-color="#00f0ff"/>
+                                            <stop offset="100%" stop-color="#ff2a85"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <rect width="100" height="100" rx="20" fill="url(#bgProfe)"/>
+                                    <!-- Melena morena moderna -->
+                                    <path d="M22 52 C20 24, 34 14, 50 14 C66 14, 80 24, 78 52 C80 68, 76 80, 72 84 L28 84 C24 80, 20 68, 22 52 Z" fill="#1c110a"/>
+                                    <!-- Cuello y chaqueta moderna -->
+                                    <path d="M26 95 C28 76, 38 72, 50 72 C62 72, 72 76, 74 95 Z" fill="#0f172a" stroke="#00f0ff" stroke-width="2"/>
+                                    <path d="M42 72 L50 85 L58 72" fill="#ff2a85"/>
+                                    <!-- Rostro -->
+                                    <path d="M34 44 C34 30, 66 30, 66 44 C66 60, 58 68, 50 68 C42 68, 34 60, 34 44 Z" fill="#f1c29b"/>
+                                    <!-- Flequillo moderno -->
+                                    <path d="M33 42 C34 26, 52 22, 67 36 C64 24, 48 18, 36 26 C32 30, 32 37, 33 42 Z" fill="#1c110a"/>
+                                    <!-- Gafas modernas con brillo neón -->
+                                    <rect x="36" y="42" width="12" height="8" rx="3" fill="#0f172a" fill-opacity="0.35" stroke="url(#neonRim)" stroke-width="2.2"/>
+                                    <rect x="52" y="42" width="12" height="8" rx="3" fill="#0f172a" fill-opacity="0.35" stroke="url(#neonRim)" stroke-width="2.2"/>
+                                    <line x1="48" y1="45" x2="52" y2="45" stroke="#00f0ff" stroke-width="2"/>
+                                    <!-- Ojos expresivos -->
+                                    <circle cx="42" cy="46" r="1.8" fill="#1e1b4b"/>
+                                    <circle cx="58" cy="46" r="1.8" fill="#1e1b4b"/>
+                                    <!-- Sonrisa -->
+                                    <path d="M44 57 Q50 62 56 57" fill="none" stroke="#9f1239" stroke-width="2.2" stroke-linecap="round"/>
+                                    <!-- Auricular/Detalle tech -->
+                                    <circle cx="32" cy="48" r="3" fill="#00f0ff"/>
+                                </svg>
+                            </div>
                             <div>
                                 <h3 class="font-cyber text-xl font-bold text-white neon-text-magenta">La Profe PerdIA</h3>
-                                <p class="text-pink-200/80 text-xs">Elige tu nivel y gana puntos para el ranking</p>
+                                <p class="text-pink-200/80 text-xs">Juega contra la máquina, elige nivel y suma puntos</p>
                             </div>
                         </div>
 
@@ -727,7 +782,23 @@
                 <div class="space-y-4">
                     <div class="glass-panel-magenta rounded-2xl p-4 relative overflow-hidden">
                         <div class="flex items-center gap-3 mb-2">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-pink-500 to-cyan-400 flex items-center justify-center text-xl shadow-[0_0_12px_rgba(255,42,133,0.5)]">👩‍🏫</div>
+                            <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-pink-500/30 to-cyan-400/30 border-2 border-pink-400/70 flex items-center justify-center shadow-[0_0_14px_rgba(255,42,133,0.5)] shrink-0 overflow-hidden p-0.5">
+                                <svg viewBox="0 0 100 100" class="w-full h-full">
+                                    <rect width="100" height="100" rx="20" fill="#1e1b4b"/>
+                                    <path d="M22 52 C20 24, 34 14, 50 14 C66 14, 80 24, 78 52 C80 68, 76 80, 72 84 L28 84 C24 80, 20 68, 22 52 Z" fill="#1c110a"/>
+                                    <path d="M26 95 C28 76, 38 72, 50 72 C62 72, 72 76, 74 95 Z" fill="#0f172a" stroke="#00f0ff" stroke-width="2"/>
+                                    <path d="M42 72 L50 85 L58 72" fill="#ff2a85"/>
+                                    <path d="M34 44 C34 30, 66 30, 66 44 C66 60, 58 68, 50 68 C42 68, 34 60, 34 44 Z" fill="#f1c29b"/>
+                                    <path d="M33 42 C34 26, 52 22, 67 36 C64 24, 48 18, 36 26 C32 30, 32 37, 33 42 Z" fill="#1c110a"/>
+                                    <rect x="36" y="42" width="12" height="8" rx="3" fill="#0f172a" fill-opacity="0.35" stroke="#00f0ff" stroke-width="2.2"/>
+                                    <rect x="52" y="42" width="12" height="8" rx="3" fill="#0f172a" fill-opacity="0.35" stroke="#ff2a85" stroke-width="2.2"/>
+                                    <line x1="48" y1="45" x2="52" y2="45" stroke="#00f0ff" stroke-width="2"/>
+                                    <circle cx="42" cy="46" r="1.8" fill="#1e1b4b"/>
+                                    <circle cx="58" cy="46" r="1.8" fill="#1e1b4b"/>
+                                    <path d="M44 57 Q50 62 56 57" fill="none" stroke="#9f1239" stroke-width="2.2" stroke-linecap="round"/>
+                                    <circle cx="32" cy="48" r="3" fill="#00f0ff"/>
+                                </svg>
+                            </div>
                             <div>
                                 <h4 class="font-cyber font-bold text-sm text-white">La Profe PerdIA</h4>
                                 <span class="text-[11px] text-cyan-300">Asistente de Ajedrez</span>
@@ -915,9 +986,11 @@
                 <div id="rewards-grid" class="grid sm:grid-cols-2 gap-3"></div>
             </div>
 
-            <!-- Contenido Pestaña 2: Historias de Ajedrecistas Famosos -->
-            <div id="rl-content-legends" class="hidden space-y-3">
-                <div class="grid sm:grid-cols-2 gap-3.5" id="legends-grid"></div>
+            <!-- Contenido Pestaña 2: Historias de Ajedrecistas Famosos (Picar encima del nombre) -->
+            <div id="rl-content-legends" class="hidden space-y-4">
+                <p class="text-xs sm:text-sm text-cyan-200/85 text-center">Toca el nombre de un ajedrecista famoso para ver su retrato y conocer su historia:</p>
+                <div id="legends-buttons" class="grid grid-cols-2 sm:grid-cols-3 gap-2.5"></div>
+                <div id="legend-detail-card" class="bg-slate-900/95 border-2 border-cyan-400/50 rounded-3xl p-5 flex flex-col sm:flex-row items-center gap-5 shadow-[0_0_25px_rgba(0,240,255,0.18)]"></div>
             </div>
 
             <div class="mt-5 text-right">
@@ -1098,39 +1171,45 @@
         const FAMOUS_LEGENDS = [
             {
                 name: 'Judit Polgár',
-                years: 'Hungría • La Reina del Ajedrez',
+                years: 'Hungría (1976) • La Reina del Ajedrez',
                 emoji: '👸',
-                story: 'Considerada la mejor ajedrecista de la historia. Aprendió a jugar de niña junto a sus hermanas y con solo 15 años batió el récord mundial de Gran Maestro más joven, venciendo a campeones del mundo con un estilo valiente y súper ofensivo.'
+                photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Judit_Polgar_%282008%29.jpg/440px-Judit_Polgar_%282008%29.jpg',
+                story: 'Considerada la mejor ajedrecista de todos los tiempos. Aprendió a jugar desde muy pequeña junto a sus hermanas y con solo 15 años batió el récord mundial de Gran Maestro más joven de la historia, derrotando a campeones mundiales con un juego valiente y muy creativo.'
             },
             {
                 name: 'Magnus Carlsen',
-                years: 'Noruega • El Mozart del Ajedrez',
+                years: 'Noruega (1990) • El Mozart del Ajedrez',
                 emoji: '🧠',
-                story: 'Memorizaba banderas y capitales de todos los países con 5 años. Se convirtió en Gran Maestro a los 13 años y ha sido Campeón del Mundo durante una década gracias a su increíble intuición y paciencia en los finales de partida.'
+                photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Magnus_Carlsen_2019.jpg/440px-Magnus_Carlsen_2019.jpg',
+                story: 'De niño memorizaba banderas y capitales de todos los países con 5 años. Se convirtió en Gran Maestro con solo 13 años y fue Campeón del Mundo durante toda una década gracias a su increíble intuición y su capacidad para encontrar jugadas ganadoras en posiciones difíciles.'
             },
             {
                 name: 'Garry Kasparov',
-                years: 'El Ogro de Bakú • Hombre vs Máquina',
+                years: 'Bakú (1963) • Hombre vs Máquina',
                 emoji: '🤖',
-                story: 'Fue número 1 del mundo durante 20 años seguidos. Pasó a la historia en 1997 al disputar el duelo más famoso del siglo contra "Deep Blue", la supercomputadora de IBM, abriendo la era moderna de la Inteligencia Artificial en el ajedrez.'
+                photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Garry_Kasparov_2007.jpg/440px-Garry_Kasparov_2007.jpg',
+                story: 'Fue el número 1 del mundo durante 20 años seguidos. Pasó a la historia en 1997 al disputar el duelo más famoso del siglo contra "Deep Blue", la supercomputadora de IBM, inaugurando la era moderna de la Inteligencia Artificial aplicada al ajedrez.'
             },
             {
                 name: 'José Raúl Capablanca',
-                years: 'Cuba • La Máquina Humana',
+                years: 'Cuba (1888–1942) • La Máquina Humana',
                 emoji: '🎩',
-                story: 'Aprendió las reglas con solo 4 años mirando jugar a su padre y corrigiéndole una jugada ilegal. Jugaba tan rápido y con tanta precisión natural que estuvo 8 años seguidos sin perder ni una sola partida oficial.'
+                photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Jos%C3%A9_Ra%C3%BAl_Capablanca_1931.jpg/440px-Jos%C3%A9_Ra%C3%BAl_Capablanca_1931.jpg',
+                story: 'Aprendió a mover las piezas con solo 4 años observando jugar a su padre y corrigiéndole una jugada ilegal. Jugaba con una naturalidad y rapidez asombrosas: estuvo 8 años seguidos sin perder ni una sola partida oficial.'
             },
             {
                 name: 'Vera Menchik',
-                years: 'Primera Campeona Mundial',
+                years: 'Moscú / Londres (1906–1944) • Primera Campeona',
                 emoji: '🏆',
-                story: 'Fue la primera mujer en conquistar el Campeonato Mundial de Ajedrez en 1927 y defendió su corona invicta durante 17 años, demostrando que la inteligencia y la estrategia no tienen género ni edad.'
+                photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Vera_Menchik_1933.jpg/440px-Vera_Menchik_1933.jpg',
+                story: 'Fue la primera mujer en conquistar el Campeonato Mundial de Ajedrez en 1927 y defendió su título invicta durante 17 años seguidos, abriendo camino para millones de niñas y jóvenes en los torneos internacionales.'
             },
             {
                 name: 'Ruy López de Segura',
-                years: 'España (Siglo XVI) • Pionero Español',
+                years: 'Zafra, España (1530–1580) • Pionero Español',
                 emoji: '🇪🇸',
-                story: 'Sacerdote y ajedrecista extremeño del siglo XVI, considerado uno de los primeros campeones del mundo oficiosos. Escribió uno de los primeros libros modernos de ajedrez y dio nombre a la "Apertura Española", usada hoy en día en todos los torneos.'
+                photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Ruy_Lopez_de_Segura.jpg/440px-Ruy_Lopez_de_Segura.jpg',
+                story: 'Sacerdote y ajedrecista extremeño del siglo XVI, considerado uno de los primeros campeones del mundo oficiosos. Escribió uno de los primeros libros modernos de ajedrez en 1561 y dio nombre a la famosa "Apertura Española", que hoy siguen jugando todos los grandes maestros.'
             }
         ];
 
@@ -1217,21 +1296,43 @@
             }).join('');
         }
 
+        let selectedLegendIdx = 0;
+
         function renderLegendsGrid() {
-            const grid = document.getElementById('legends-grid');
-            if (!grid) return;
-            grid.innerHTML = FAMOUS_LEGENDS.map(l => `
-                <div class="bg-slate-900/90 border border-cyan-500/30 rounded-2xl p-4 space-y-1.5">
-                    <div class="flex items-center gap-2.5">
-                        <span class="text-2xl">${l.emoji}</span>
-                        <div>
-                            <h4 class="font-cyber font-bold text-sm text-cyan-300">${l.name}</h4>
-                            <span class="text-[11px] text-amber-300 font-semibold">${l.years}</span>
-                        </div>
+            const btns = document.getElementById('legends-buttons');
+            if (!btns) return;
+            btns.innerHTML = FAMOUS_LEGENDS.map((l, idx) => {
+                const active = idx === selectedLegendIdx;
+                return `
+                    <button onclick="selectLegend(${idx})" class="p-3 rounded-2xl text-left transition border-2 flex items-center gap-2.5 cursor-pointer ${active ? 'bg-cyan-500/25 border-cyan-400 shadow-[0_0_15px_rgba(0,240,255,0.3)]' : 'bg-slate-900/80 border-slate-700 hover:border-cyan-400/60'}">
+                        <span class="text-2xl shrink-0">${l.emoji}</span>
+                        <span class="font-bold text-xs sm:text-sm text-white leading-tight">${l.name}</span>
+                    </button>
+                `;
+            }).join('');
+
+            const legend = FAMOUS_LEGENDS[selectedLegendIdx];
+            const card = document.getElementById('legend-detail-card');
+            if (card && legend) {
+                card.innerHTML = `
+                    <div class="w-32 h-36 sm:w-36 sm:h-44 rounded-2xl overflow-hidden border-2 border-cyan-400/70 bg-slate-800 shrink-0 shadow-lg flex items-center justify-center relative">
+                        <img src="${legend.photoUrl}" alt="${legend.name}" class="w-full h-full object-cover"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="hidden w-full h-full items-center justify-center text-6xl bg-gradient-to-br from-cyan-900 to-slate-900">${legend.emoji}</div>
                     </div>
-                    <p class="text-xs text-slate-200 leading-relaxed pt-1">${l.story}</p>
-                </div>
-            `).join('');
+                    <div class="space-y-2 text-center sm:text-left">
+                        <span class="inline-block bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-bold px-3 py-0.5 rounded-full">${legend.years}</span>
+                        <h4 class="font-cyber text-xl sm:text-2xl font-black text-white neon-text-cyan">${legend.name}</h4>
+                        <p class="text-sm sm:text-base text-slate-200 leading-relaxed">${legend.story}</p>
+                    </div>
+                `;
+            }
+        }
+
+        function selectLegend(idx) {
+            selectedLegendIdx = idx;
+            playSimpleTone(540, 0.08);
+            renderLegendsGrid();
         }
 
         // =========================================================================
